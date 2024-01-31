@@ -6,11 +6,11 @@
     "autoload": {
         "psr-4": {
             "Wdpf\\Test\\": "src/",
-            "Wdpf\\Mother\\": "src/"
+            "Wdpf\\Motherboard\\": "src/"
         },
         "files": [
           "src/test.php",
-          "src/mother.php"
+          "src/motherboard.php"
         ]
     },
     "authors": [

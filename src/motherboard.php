@@ -1,6 +1,6 @@
 <?php
-namespace wdpf\mother;
-final class mother{
+namespace wdpf\motherboard;
+class motherboard{
     public function __construct(){
         include __DIR__."/example.php";
     }
