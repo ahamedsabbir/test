@@ -5,12 +5,12 @@
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "Wdpf\\Test\\": "src/",
-            "Wdpf\\Motherboard\\": "src/"
+            "Wdpf\\Test\\": "src/"
         },
         "files": [
           "src/test.php",
-          "src/motherboard.php"
+          "src/motherboard.php",
+          "src/hot.php"
         ]
     },
     "authors": [
