@@ -14,6 +14,6 @@ jobs:
     - name: Sync files
       uses: SamKirkland/FTP-Deploy-Action@v4.3.4
       with:
-        server: ftp.coders24x7.com
-        username: onik@coders24x7.com
-        password: tt2kXj]DEzgZ
+        server: onikitbd.x10.mx
+        username: sabbir@onikitbd.x10.mx
+        password: (@Abcd1234#)
