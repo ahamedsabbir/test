@@ -1,0 +1,87 @@
+*{
+    margin: 0;
+    padding: 0;
+    border:0;
+    outline:0;
+}
+body{}
+.mainDiv{}
+/* .leftSide{
+    width: 39%;
+    display: inline-block;
+    float: left;
+    height: 750px;
+    background-color: beige;
+} */
+.roadSide{
+    width: 300px;
+    /* display: inline-block; */
+    /* float: left; */
+    height: 750px;
+    background-color: gray;
+    border: 2px dashed black;
+    position: relative;
+    margin: 0px auto;
+    overflow: hidden;
+}
+#showScore{
+    /* text-align: center; */
+    font-size: 20px;
+    font-weight: 800;
+    color:beige;
+}
+#mainCar{
+    width: 50px;
+    height: 70px;
+    position: absolute;
+    background-image: url(2.png);
+    background-color: rgb(86, 85, 85);
+    background-size: 100% 70px;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+    top: 500px;
+    left: 50px;
+    z-index: 1;
+}
+.roadSport{
+    margin: 0 auto;
+    width: 20px;
+    background-color: aliceblue;
+    height: 140px;
+    position: absolute;
+    top: 0px;
+    left: 140px;
+}
+.roadEmemy{
+    margin: 0 auto;
+    width: 50px;
+    height: 70px;
+    position: absolute;
+    background-color: rgb(77, 76, 76);
+    /* background-image: url(car_sticker.png); */
+    background-size: 100% 70px;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+    top: 0px;
+    left: 140px;
+    z-index: 1;
+}
+/* .rightSide{
+    width: 39%;
+    display: inline-block;
+    float: left;
+    height: 750px;
+    background-color: beige;
+} */
+#alertMsg{
+    /* background-color: antiquewhite; */
+    position: absolute;
+    top: 20%;
+    left: 6%;
+    z-index: 10;
+    padding: 30px;
+}
+#alertMsg img {
+    display: block;
+    width: 200px;
+}
