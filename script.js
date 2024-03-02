@@ -1,6 +1,6 @@
 let roadSide = document.querySelector(".roadSide");
 let roadSidePosition = roadSide.getBoundingClientRect();
-let mainCar = document.getElementById("mainCar");
+/* let mainCar = document.getElementById("mainCar"); */
 let roadSport = document.getElementById("roadSport");
 
 let player = {
@@ -88,6 +88,7 @@ function moveEnemy(car){
       player.status = false;
       document.querySelectorAll('.roadSport').forEach(e => e.remove());
       document.querySelectorAll('.roadEmemy').forEach(e => e.remove());
+      document.querySelectorAll('#mainCar').forEach(e => e.remove());
       document.getElementById('alertMsg').style.display = "block";
     }
     if(v.top >= 700){
@@ -130,6 +131,9 @@ function start(){
   document.getElementById('alertMsg').style.display = "none";
   window.requestAnimationFrame(play);
   
+  let mainCar = document.createElement('div');
+  mainCar.setAttribute("id", "mainCar");
+  roadSide.appendChild(mainCar);
 
 
   for (let i = 0; i < 5; i++) {
