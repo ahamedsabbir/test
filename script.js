@@ -1,7 +1,6 @@
 let roadSide = document.querySelector(".roadSide");
 let roadSidePosition = roadSide.getBoundingClientRect();
-/* let mainCar = document.getElementById("mainCar"); */
-
+let mainCar = document.getElementById("mainCar");
 let roadSport = document.getElementById("roadSport");
 
 let player = {
@@ -13,6 +12,31 @@ let player = {
     left: 50
 };
 
+
+
+
+/* let keys = {w: false, d: false, s: false, a: false}
+document.addEventListener('keydown',function(e){
+    e.preventDefault();
+    keys[e.key] = true;
+    if(keys.w == true && player.top > (roadSidePosition.top + 140)){
+        player.top -= player.speed * 5;
+        mainCar.style.top = player.top+"px";
+    }else if(keys.d == true && player.left < (roadSidePosition.width - 52)){
+        player.left += player.speed * 5;
+        mainCar.style.left = player.left+"px";
+    }else if(keys.s == true && player.top < (roadSidePosition.bottom - 70)){
+        player.top += player.speed * 5;
+        mainCar.style.top = player.top+"px";
+    }else if(keys.a == true && player.left > 0){
+        player.left -= player.speed * 5;
+        mainCar.style.left = player.left+"px";
+    }
+});
+document.addEventListener('keyup',function(e){
+    e.preventDefault();
+    keys[e.key] = false; 
+}); */
 
 
 
@@ -64,7 +88,6 @@ function moveEnemy(car){
       player.status = false;
       document.querySelectorAll('.roadSport').forEach(e => e.remove());
       document.querySelectorAll('.roadEmemy').forEach(e => e.remove());
-      document.querySelectorAll('#mainCar').forEach(e => e.remove());
       document.getElementById('alertMsg').style.display = "block";
     }
     if(v.top >= 700){
@@ -107,11 +130,6 @@ function start(){
   document.getElementById('alertMsg').style.display = "none";
   window.requestAnimationFrame(play);
   
-
-
-  let mainCar = document.createElement('div');
-  mainCar.setAttribute("id", "mainCar");
-  roadSide.appendChild(mainCar);
 
 
   for (let i = 0; i < 5; i++) {
