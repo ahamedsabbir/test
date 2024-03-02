@@ -15,7 +15,7 @@ let player = {
 
 
 
-let keys = {w: false, d: false, s: false, a: false}
+/* let keys = {w: false, d: false, s: false, a: false}
 document.addEventListener('keydown',function(e){
     e.preventDefault();
     keys[e.key] = true;
@@ -36,7 +36,109 @@ document.addEventListener('keydown',function(e){
 document.addEventListener('keyup',function(e){
     e.preventDefault();
     keys[e.key] = false; 
+}); */
+
+
+
+
+
+let keys = { w: false, d: false, s: false, a: false, ArrowUp: false, ArrowRight: false, ArrowDown: false, ArrowLeft: false };
+
+document.addEventListener('keydown', function (e) {
+    e.preventDefault();
+    keys[e.key] = true;
+    movePlayer();
 });
+
+document.addEventListener('keyup', function (e) {
+    e.preventDefault();
+    keys[e.key] = false;
+    movePlayer();
+});
+
+document.addEventListener('touchstart', function (e) {
+    e.preventDefault();
+    handleTouch(e.touches[0]);
+});
+
+document.addEventListener('touchmove', function (e) {
+    e.preventDefault();
+    handleTouch(e.touches[0]);
+});
+
+document.addEventListener('touchend', function (e) {
+    e.preventDefault();
+    keys = { w: false, d: false, s: false, a: false, ArrowUp: false, ArrowRight: false, ArrowDown: false, ArrowLeft: false };
+});
+
+function handleTouch(touch) {
+    let x = touch.clientX;
+    let y = touch.clientY;
+
+    // Determine which direction the touch gesture represents
+    if (x < window.innerWidth / 2) {
+        keys.a = true; // Left
+        keys.d = false;
+    } else {
+        keys.a = false;
+        keys.d = true; // Right
+    }
+
+    if (y < window.innerHeight / 2) {
+        keys.w = true; // Up
+        keys.s = false;
+    } else {
+        keys.w = false;
+        keys.s = true; // Down
+    }
+
+    movePlayer();
+}
+
+function movePlayer() {
+    if (keys.w || keys.ArrowUp) {
+        if (player.top > (roadSidePosition.top + 140)) {
+            player.top -= player.speed * 5;
+            mainCar.style.top = player.top + "px";
+        }
+    } else if (keys.s || keys.ArrowDown) {
+        if (player.top < (roadSidePosition.bottom - 70)) {
+            player.top += player.speed * 5;
+            mainCar.style.top = player.top + "px";
+        }
+    }
+
+    if (keys.d || keys.ArrowRight) {
+        if (player.left < (roadSidePosition.width - 52)) {
+            player.left += player.speed * 5;
+            mainCar.style.left = player.left + "px";
+        }
+    } else if (keys.a || keys.ArrowLeft) {
+        if (player.left > 0) {
+            player.left -= player.speed * 5;
+            mainCar.style.left = player.left + "px";
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -134,14 +236,4 @@ function start(){
     return color[coun];
   } */
 }
-
-
-
-
-
-
-
-
-
-
 
