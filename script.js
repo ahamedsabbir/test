@@ -131,7 +131,7 @@ function start(){
   document.getElementById('alertMsg').style.display = "none";
   window.requestAnimationFrame(play);
   
-  let mainCar = document.createElement('div');
+  mainCar = document.createElement('div');
   mainCar.setAttribute("id", "mainCar");
   roadSide.appendChild(mainCar);
 
